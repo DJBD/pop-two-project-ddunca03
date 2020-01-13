@@ -17,6 +17,8 @@ public class FractionImpl implements Fraction {
      */
     public FractionImpl(int numerator, int denominator) {
 
+        if (denominator == 0) {throw new ArithmeticException("Divide by zero");}
+
         int n1 = java.lang.Math.abs(numerator), n2 = java.lang.Math.abs(denominator), gcd = 1;
 
         for(int i = 1; i <= n1 && i <= n2; ++i)
@@ -27,11 +29,10 @@ public class FractionImpl implements Fraction {
         this.numerator = numerator/gcd;
         this.denominator = denominator/gcd;
 
-        if(numerator < 0 || denominator < 0) {
-            this.numerator = this.numerator*-1;
-            this.denominator = this.denominator*-1;
+        if(denominator < 0) {
+            this.numerator = -this.numerator;
+            this.denominator = -this.denominator;
         }
-        //need to also throw the ArithmeticException
     }
     /**
      * The parameter is the numerator and <pre>1</pre> is the implicit denominator.
@@ -55,23 +56,53 @@ public class FractionImpl implements Fraction {
      * @param fraction the string representation of the fraction
      */
     public FractionImpl(String fraction) {
-        // TODO
+
+       // String s_fraction = fraction.split()
     }
 
     /**
      * @inheritDoc
      */
     @Override
-    public Fraction add(Fraction f) {return null;
+    public Fraction add(Fraction f) {
+        FractionImpl cfrac = (FractionImpl) f; //casting f to the FractionImpl
+        //f fraction c & d
+        int c = cfrac.numerator;
+        int d = cfrac.denominator;
+        //this fraction a & b
+        int a = this.numerator;
+        int b = this.denominator;
+
+        int ad = a * d;
+        int bc = b * c;
+        int bd = b * d;
+
+        FractionImpl total = new FractionImpl(ad+bc, bd);
+
+        return total;
 
     }
-
     /**
      * @inheritDoc
      */
     @Override
     public Fraction subtract(Fraction f) {
-        return null;
+        FractionImpl cfrac = (FractionImpl) f; //casting f to the FractionImpl
+        //f fraction c & d
+        int c = cfrac.numerator;
+        int d = cfrac.denominator;
+        //this fraction a & b
+        int a = this.numerator;
+        int b = this.denominator;
+
+        int ad = a * d;
+        int bc = b * c;
+        int bd = b * d;
+
+        FractionImpl sub = new FractionImpl(ad-bc, bd);
+
+        return sub;
+
     }
 
     /**
@@ -79,7 +110,17 @@ public class FractionImpl implements Fraction {
      */
     @Override
     public Fraction multiply(Fraction f) {
-        return null;
+        FractionImpl cfrac = (FractionImpl) f; //casting f to the FractionImpl
+        //f fraction c & d
+        int c = cfrac.numerator;
+        int d = cfrac.denominator;
+        //this fraction a & b
+        int a = this.numerator;
+        int b = this.denominator;
+
+        FractionImpl multi = new FractionImpl(a*c, b*d);
+
+        return multi;
     }
 
     /**
@@ -87,7 +128,16 @@ public class FractionImpl implements Fraction {
      */
     @Override
     public Fraction divide(Fraction f) {
-        return null;
+        FractionImpl cfrac = (FractionImpl) f; //casting f to the FractionImpl
+        //f fraction c & d
+        int c = cfrac.numerator;
+        int d = cfrac.denominator;
+        //this fraction a & b
+        int a = this.numerator;
+        int b = this.denominator;
+
+        FractionImpl divi = new FractionImpl(a*d, b*c);
+        return divi;
     }
 
     /**
@@ -151,6 +201,9 @@ public class FractionImpl implements Fraction {
      */
     @Override
     public String toString() {
-        return null;
+        Integer n = this.numerator;
+        Integer d = this.denominator;
+        return (n.toString() + "/" + d.toString());
+
     }
 }
