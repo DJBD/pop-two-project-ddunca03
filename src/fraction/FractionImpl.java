@@ -44,8 +44,8 @@ public class FractionImpl implements Fraction {
      * @inheritDoc
      */
     @Override
-    public Fraction add(Fraction f) {
-        return null;
+    public Fraction add(Fraction f) {return null;
+
     }
 
     /**
