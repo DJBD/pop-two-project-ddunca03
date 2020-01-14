@@ -77,9 +77,7 @@ public class FractionImpl implements Fraction {
         int bc = b * c;
         int bd = b * d;
 
-        FractionImpl total = new FractionImpl(ad+bc, bd);
-
-        return total;
+        return new FractionImpl(ad+bc, bd);
 
     }
     /**
@@ -99,9 +97,7 @@ public class FractionImpl implements Fraction {
         int bc = b * c;
         int bd = b * d;
 
-        FractionImpl sub = new FractionImpl(ad-bc, bd);
-
-        return sub;
+        return new FractionImpl(ad-bc, bd);
 
     }
 
@@ -118,9 +114,7 @@ public class FractionImpl implements Fraction {
         int a = this.numerator;
         int b = this.denominator;
 
-        FractionImpl multi = new FractionImpl(a*c, b*d);
-
-        return multi;
+        return new FractionImpl(a*c, b*d);
     }
 
     /**
@@ -136,8 +130,7 @@ public class FractionImpl implements Fraction {
         int a = this.numerator;
         int b = this.denominator;
 
-        FractionImpl divi = new FractionImpl(a*d, b*c);
-        return divi;
+        return new FractionImpl(a*d, b*c);
     }
 
     /**
@@ -145,7 +138,8 @@ public class FractionImpl implements Fraction {
      */
     @Override
     public Fraction abs() {
-        return null;
+        if (this.numerator < 0)this.numerator=-this.numerator;
+        return new FractionImpl(this.numerator, this.denominator);
     }
 
     /**
@@ -153,7 +147,8 @@ public class FractionImpl implements Fraction {
      */
     @Override
     public Fraction negate() {
-        return null;
+        this.numerator=-this.numerator;
+        return new FractionImpl(this.numerator, this.denominator);
     }
 
     /**
@@ -168,8 +163,10 @@ public class FractionImpl implements Fraction {
      * @inheritDoc
      */
     @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
+    public boolean equals(Object obj) { ;
+        if (!(obj instanceof FractionImpl)) return false;
+        FractionImpl objFrac = (FractionImpl) obj;
+        return this.numerator == objFrac.numerator && this.denominator == objFrac.denominator;
     }
 
     /**
@@ -185,7 +182,9 @@ public class FractionImpl implements Fraction {
      */
     @Override
     public Fraction inverse() {
-        return null;
+        int newtop = this.denominator;
+        int newbot = this.numerator;
+        return new FractionImpl(newtop,newbot);
     }
 
     /**
@@ -193,7 +192,11 @@ public class FractionImpl implements Fraction {
      */
     @Override
     public int compareTo(Fraction o) {
-        return 0;
+        FractionImpl comp = new FractionImpl(this.numerator,this.denominator);
+        if (comp.equals(o))return 0;
+        Fraction sub = comp.subtract(o);
+        if (((FractionImpl) sub).numerator == 0) return 0;
+        else return 1;
     }
 
     /**
@@ -201,9 +204,9 @@ public class FractionImpl implements Fraction {
      */
     @Override
     public String toString() {
-        Integer n = this.numerator;
-        Integer d = this.denominator;
-        return (n.toString() + "/" + d.toString());
+        int n = this.numerator;
+        int d = this.denominator;
+        return (Integer.toString(n) + "/" + Integer.toString(d));
 
     }
 }

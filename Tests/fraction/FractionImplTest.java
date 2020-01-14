@@ -8,6 +8,7 @@ class FractionImplTest {
     Fraction third = new FractionImpl(1,3);
     Fraction quarter = new FractionImpl(1,4);
     Fraction half = new FractionImpl(1,2);
+    Fraction bighalf = new FractionImpl(10,20);
     Fraction n_half = new FractionImpl(10,-20);
 
     @Test
@@ -34,28 +35,45 @@ class FractionImplTest {
     }
 
     @Test
-    void abs() throws Exception{
+    void abs()  throws Exception {
         Fraction total = n_half.abs();
         assertEquals("1/2",total.toString());
     }
 
     @Test
-    void negate() {
+    void negate() throws Exception{
+        Fraction total = quarter.negate();
+        assertEquals("-1/4",total.toString());
     }
 
     @Test
-    void testEquals() {
+    void testEquals() throws Exception{
+        assertEquals(bighalf, half);
     }
 
     @Test
-    void inverse() {
+    void inverse() throws Exception{
+        Fraction total = quarter.inverse();
+        assertEquals("4/1",total.toString());
+    }
+
+    @Test //testing to see less than
+    void compareTo1() throws Exception{
+        assertEquals(-1,quarter.compareTo(half));
+    }
+
+    @Test //testing to see more than
+    void compareTo2() throws Exception{
+        assertEquals(1,third.compareTo(quarter));
+    }
+
+    @Test //testing to see equal to
+    void compareTo3() throws Exception{
+        assertEquals(0,bighalf.compareTo(half));
     }
 
     @Test
-    void compareTo() {
-    }
-
-    @Test
-    void testToString() {
+    void testToString() throws Exception {
+        assertEquals("1/2",half.toString());
     }
 }

@@ -30,7 +30,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Treatwell-Box-Project" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -54,7 +54,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.FractionImplTest.abs">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="fraction.Main" />
+      <module name="pop-two-project-ddunca03" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="fraction.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="FractionImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pop-two-project-ddunca03" />
       <extension name="coverage">
@@ -86,7 +99,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FractionImplTest.divide" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FractionImplTest.inverse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pop-two-project-ddunca03" />
       <extension name="coverage">
         <pattern>
@@ -96,13 +109,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="fraction" />
       <option name="MAIN_CLASS_NAME" value="fraction.FractionImplTest" />
-      <option name="METHOD_NAME" value="divide" />
+      <option name="METHOD_NAME" value="inverse" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FractionImplTest.multiply" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FractionImplTest.testEquals" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pop-two-project-ddunca03" />
       <extension name="coverage">
         <pattern>
@@ -112,23 +125,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="fraction" />
       <option name="MAIN_CLASS_NAME" value="fraction.FractionImplTest" />
-      <option name="METHOD_NAME" value="multiply" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FractionImplTest.subtract" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="pop-two-project-ddunca03" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="fraction.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="fraction" />
-      <option name="MAIN_CLASS_NAME" value="fraction.FractionImplTest" />
-      <option name="METHOD_NAME" value="subtract" />
+      <option name="METHOD_NAME" value="testEquals" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -136,11 +133,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.FractionImplTest.abs" />
-        <item itemvalue="JUnit.FractionImplTest.divide" />
-        <item itemvalue="JUnit.FractionImplTest.multiply" />
-        <item itemvalue="JUnit.FractionImplTest.subtract" />
         <item itemvalue="JUnit.FractionImplTest" />
+        <item itemvalue="JUnit.FractionImplTest.testEquals" />
+        <item itemvalue="JUnit.FractionImplTest.inverse" />
       </list>
     </recent_temporary>
   </component>
@@ -155,7 +152,7 @@
       <option name="presentableId" value="Default" />
       <updated>1578910974688</updated>
       <workItem from="1578910976474" duration="20542000" />
-      <workItem from="1578999134528" duration="1638000" />
+      <workItem from="1578999134528" duration="6401000" />
     </task>
     <servers />
   </component>
