@@ -57,7 +57,11 @@ public class FractionImpl implements Fraction {
      */
     public FractionImpl(String fraction) {
 
-       // String s_fraction = fraction.split()
+       String[] s_fraction = fraction.split("/");
+       int numerat = Integer.parseInt(s_fraction[0]);
+       int denomenat = Integer.parseInt(s_fraction[1]);
+       this.numerator = numerat;
+       this.denominator = denomenat; // need to simplify this fraction
     }
 
     /**
@@ -163,7 +167,7 @@ public class FractionImpl implements Fraction {
      * @inheritDoc
      */
     @Override
-    public boolean equals(Object obj) { ;
+    public boolean equals(Object obj) {
         if (!(obj instanceof FractionImpl)) return false;
         FractionImpl objFrac = (FractionImpl) obj;
         return this.numerator == objFrac.numerator && this.denominator == objFrac.denominator;
@@ -192,11 +196,8 @@ public class FractionImpl implements Fraction {
      */
     @Override
     public int compareTo(Fraction o) {
-        FractionImpl comp = new FractionImpl(this.numerator,this.denominator);
-        if (comp.equals(o))return 0;
-        Fraction sub = comp.subtract(o);
-        if (((FractionImpl) sub).numerator == 0) return 0;
-        else return 1;
+        Fraction sub = this.subtract(o);
+        return Integer.compare(((FractionImpl) sub).numerator, 0);
     }
 
     /**
@@ -206,7 +207,7 @@ public class FractionImpl implements Fraction {
     public String toString() {
         int n = this.numerator;
         int d = this.denominator;
-        return (Integer.toString(n) + "/" + Integer.toString(d));
+        return (n + "/" + d);
 
     }
 }

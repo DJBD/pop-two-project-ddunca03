@@ -134,8 +134,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.FractionImplTest.abs" />
         <item itemvalue="JUnit.FractionImplTest" />
+        <item itemvalue="JUnit.FractionImplTest.abs" />
         <item itemvalue="JUnit.FractionImplTest.testEquals" />
         <item itemvalue="JUnit.FractionImplTest.inverse" />
       </list>
@@ -152,7 +152,7 @@
       <option name="presentableId" value="Default" />
       <updated>1578910974688</updated>
       <workItem from="1578910976474" duration="20542000" />
-      <workItem from="1578999134528" duration="6401000" />
+      <workItem from="1578999134528" duration="8380000" />
     </task>
     <servers />
   </component>
