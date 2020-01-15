@@ -58,10 +58,25 @@ public class FractionImpl implements Fraction {
     public FractionImpl(String fraction) {
 
        String[] s_fraction = fraction.split("/");
-       int numerat = Integer.parseInt(s_fraction[0]);
-       int denomenat = Integer.parseInt(s_fraction[1]);
-       this.numerator = numerat;
-       this.denominator = denomenat; // need to simplify this fraction
+       int numerator = Integer.parseInt(s_fraction[0]);
+       int denominator = Integer.parseInt(s_fraction[1]);
+
+        if (denominator == 0) {throw new ArithmeticException("Divide by zero");}
+
+        int n1 = java.lang.Math.abs(numerator), n2 = java.lang.Math.abs(denominator), gcd = 1;
+
+        for(int i = 1; i <= n1 && i <= n2; ++i)
+        {
+            if(n1 % i==0 && n2 % i==0)
+                gcd = i;
+        }
+        this.numerator = numerator/gcd;
+        this.denominator = denominator/gcd;
+
+        if(denominator < 0) {
+            this.numerator = -this.numerator;
+            this.denominator = -this.denominator;
+        }
     }
 
     /**
