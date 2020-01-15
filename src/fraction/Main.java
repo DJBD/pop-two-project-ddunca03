@@ -1,21 +1,21 @@
 package fraction;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        Fraction a = new FractionImpl(1,3);
-        Fraction b = new FractionImpl("6/12");
-        Fraction c = a.add(b);
+        System.out.println("Welcome to your FractionProgram!" + "\n" + "You can use the following features: add, subtract, multiply, divide, absolute, inverse, equal to, compare to");
 
-        System.out.println(b.toString());
+        Scanner firstFraction = new Scanner(System.in);
+        var userInput = firstFraction.nextLine();
+
+        Fraction firstFrac = new FractionImpl(userInput);
+        System.out.println(firstFrac.toString());
 
 
-        System.out.println(a.compareTo(b));
-        System.out.println(b.compareTo(a));
 
-       // System.out.println(a.equals(b));
 
-       // System.out.println(c.toString());
     }
 }

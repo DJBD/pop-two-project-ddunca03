@@ -54,7 +54,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.FractionImplTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="fraction.Main" />
       <module name="pop-two-project-ddunca03" />
@@ -99,7 +99,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FractionImplTest.inverse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FractionImplTest.exceptionTesting" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pop-two-project-ddunca03" />
       <extension name="coverage">
         <pattern>
@@ -109,7 +109,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="fraction" />
       <option name="MAIN_CLASS_NAME" value="fraction.FractionImplTest" />
-      <option name="METHOD_NAME" value="inverse" />
+      <option name="METHOD_NAME" value="exceptionTesting" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -133,11 +133,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FractionImplTest" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.FractionImplTest" />
+        <item itemvalue="JUnit.FractionImplTest.exceptionTesting" />
         <item itemvalue="JUnit.FractionImplTest.abs" />
         <item itemvalue="JUnit.FractionImplTest.testEquals" />
-        <item itemvalue="JUnit.FractionImplTest.inverse" />
       </list>
     </recent_temporary>
   </component>
@@ -152,7 +152,8 @@
       <option name="presentableId" value="Default" />
       <updated>1578910974688</updated>
       <workItem from="1578910976474" duration="20542000" />
-      <workItem from="1578999134528" duration="9011000" />
+      <workItem from="1578999134528" duration="9556000" />
+      <workItem from="1579086571410" duration="3586000" />
     </task>
     <servers />
   </component>
