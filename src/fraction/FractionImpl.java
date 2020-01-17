@@ -18,20 +18,24 @@ public class FractionImpl implements Fraction {
     public FractionImpl(int numerator, int denominator) {
 
         if (denominator == 0) {throw new ArithmeticException("Divide by zero");}
+        //making sure you cannot divide by zero and throws an exception if so
 
         int n1 = java.lang.Math.abs(numerator), n2 = java.lang.Math.abs(denominator), gcd = 1;
 
-        for(int i = 1; i <= n1 && i <= n2; ++i)
+        for(int i = 1; i <= n1 && i <= n2; ++i) //calculating the greatest common denominator
         {
             if(n1 % i==0 && n2 % i==0)
                 gcd = i;
         }
         this.numerator = numerator/gcd;
         this.denominator = denominator/gcd;
+        //simplifies the fraction
 
         if(denominator < 0) {
             this.numerator = -this.numerator;
             this.denominator = -this.denominator;
+
+            //ensures that only the numerator can be negative
         }
     }
     /**
@@ -41,7 +45,7 @@ public class FractionImpl implements Fraction {
      */
     public FractionImpl(int wholeNumber) {
         this.numerator = wholeNumber;
-        this.denominator = 1;
+        this.denominator = 1; //set the denominator to 1 as any whole number is a fraction over 1
     }
 
     /**
@@ -65,7 +69,7 @@ public class FractionImpl implements Fraction {
 
         int n1 = java.lang.Math.abs(numerator), n2 = java.lang.Math.abs(denominator), gcd = 1;
 
-        for(int i = 1; i <= n1 && i <= n2; ++i)
+        for(int i = 1; i <= n1 && i <= n2; ++i) //calculating the greatest common denominator
         {
             if(n1 % i==0 && n2 % i==0)
                 gcd = i;
@@ -73,9 +77,13 @@ public class FractionImpl implements Fraction {
         this.numerator = numerator/gcd;
         this.denominator = denominator/gcd;
 
+        //simplifies the fraction
+
         if(denominator < 0) {
             this.numerator = -this.numerator;
             this.denominator = -this.denominator;
+
+            //ensures that only the numerator can be negative
         }
     }
 
@@ -96,7 +104,7 @@ public class FractionImpl implements Fraction {
         int bc = b * c;
         int bd = b * d;
 
-        return new FractionImpl(ad+bc, bd);
+        return new FractionImpl(ad+bc, bd); //sum calculation of two fractions
 
     }
     /**
@@ -116,7 +124,7 @@ public class FractionImpl implements Fraction {
         int bc = b * c;
         int bd = b * d;
 
-        return new FractionImpl(ad-bc, bd);
+        return new FractionImpl(ad-bc, bd); //subtraction calculation of two fractions
 
     }
 
@@ -133,7 +141,7 @@ public class FractionImpl implements Fraction {
         int a = this.numerator;
         int b = this.denominator;
 
-        return new FractionImpl(a*c, b*d);
+        return new FractionImpl(a*c, b*d); // multiplication calculation
     }
 
     /**
@@ -149,7 +157,7 @@ public class FractionImpl implements Fraction {
         int a = this.numerator;
         int b = this.denominator;
 
-        return new FractionImpl(a*d, b*c);
+        return new FractionImpl(a*d, b*c); // division calculation
     }
 
     /**
@@ -158,7 +166,7 @@ public class FractionImpl implements Fraction {
     @Override
     public Fraction abs() {
         if (this.numerator < 0)this.numerator=-this.numerator;
-        return new FractionImpl(this.numerator, this.denominator);
+        return new FractionImpl(this.numerator, this.denominator); //ensure that all returned fractions are positive
     }
 
     /**
@@ -167,7 +175,7 @@ public class FractionImpl implements Fraction {
     @Override
     public Fraction negate() {
         this.numerator=-this.numerator;
-        return new FractionImpl(this.numerator, this.denominator);
+        return new FractionImpl(this.numerator, this.denominator); //returns the opposite sign +/- of the fraction
     }
 
     /**
@@ -183,9 +191,9 @@ public class FractionImpl implements Fraction {
      */
     @Override
     public boolean equals(Object obj) {
-        if (!(obj instanceof FractionImpl)) return false;
-        FractionImpl objFrac = (FractionImpl) obj;
-        return this.numerator == objFrac.numerator && this.denominator == objFrac.denominator;
+        if (!(obj instanceof FractionImpl)) return false; //first this checks to see if each class is equal. If they aren't the same class then it is already false
+        FractionImpl objFrac = (FractionImpl) obj; //cast the obj to the fractionImpl class
+        return this.numerator == objFrac.numerator && this.denominator == objFrac.denominator; //boolean logic to show if the fraction is the same numbers
     }
 
     /**
@@ -200,7 +208,7 @@ public class FractionImpl implements Fraction {
      * @inheritDoc
      */
     @Override
-    public Fraction inverse() {
+    public Fraction inverse() { //swaps the denominator and numerator
         int newtop = this.denominator;
         int newbot = this.numerator;
         return new FractionImpl(newtop,newbot);
@@ -222,7 +230,7 @@ public class FractionImpl implements Fraction {
     public String toString() {
         int n = this.numerator;
         int d = this.denominator;
-        return (n + "/" + d);
+        return (n + "/" + d); //returns the fraction in as a String
 
     }
 }
