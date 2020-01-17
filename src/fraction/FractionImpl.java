@@ -62,8 +62,13 @@ public class FractionImpl implements Fraction {
     public FractionImpl(String fraction) {
 
        String[] s_fraction = fraction.split("/");
+
+       if (s_fraction.length == 1)
+       {this.numerator = Integer.parseInt(s_fraction[0]);
+        this.denominator = 1;}
+       else{
        int numerator = Integer.parseInt(s_fraction[0]);
-       int denominator = Integer.parseInt(s_fraction[1]);
+       int denominator = Integer.parseInt(s_fraction[1]);}
 
         if (denominator == 0) {throw new ArithmeticException("Divide by zero");}
 
